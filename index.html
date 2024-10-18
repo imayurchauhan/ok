@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://your-image-url.com/bestfriends-bg.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: 'blue';
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent background for buttons */
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #yesButton {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #noButton {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+
+        .gif {
+            width: 250px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Kya me hi hu tera best friend......?</h1>
+
+    <div class="container">
+        <button id="yesButton" onclick="redirectToLovePage()">Yes</button>
+        <button id="noButton" onclick="moveNoButton()">No</button>
+        <br>
+        <img src="https://media.tenor.com/bIxgXYcZodkAAAAM/monkey.gif" alt="Best friends GIF" class="gif"> <!-- Replace with your GIF URL -->
+    </div>
+
+    <script>
+        // Function to redirect to another page when "Yes" is clicked
+        function redirectToLovePage() {
+            window.location.href = "love.html"; // Redirects to love.html
+        }
+
+        // Function to move the "No" button randomly while keeping it on the screen
+        function moveNoButton() {
+            var noButton = document.getElementById("noButton");
+
+            // Calculate the available space within the window for button placement
+            var maxX = window.innerWidth - noButton.offsetWidth;
+            var maxY = window.innerHeight - noButton.offsetHeight;
+
+            // Generate random positions within the screen limits
+            var x = Math.floor(Math.random() * maxX);
+            var y = Math.floor(Math.random() * maxY);
+
+            // Apply the random positions to the "No" button
+            noButton.style.left = x + 'px';
+            noButton.style.top = y + 'px';
+        }
+    </script>
+
+</body>
+</html>
